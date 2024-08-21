@@ -1,0 +1,16 @@
+# Bootstrap Configuration: META-INF/spring.factories
+org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+com.wynd.vop.framework.vault.bootstrap.autoconfigure.VaultForConsulBootstrapConfiguration
+
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.wynd.vop.framework.service.autoconfigure.BipServiceAutoConfiguration,\
+com.wynd.vop.framework.rest.autoconfigure.BipRestAutoConfiguration,\
+com.wynd.vop.framework.audit.autoconfigure.BipAuditAutoConfiguration,\
+com.wynd.vop.framework.feign.autoconfigure.BipFeignAutoConfiguration,\
+com.wynd.vop.framework.security.autoconfigure.BipSecurityAutoConfiguration,\
+com.wynd.vop.framework.cache.autoconfigure.BipCacheAutoConfiguration,\
+com.wynd.vop.framework.cache.autoconfigure.server.BipEmbeddedRedisServer,\
+com.wynd.vop.framework.swagger.autoconfigure.BipSwaggerAutoConfiguration,\
+com.wynd.vop.framework.validator.autoconfigure.BipValidatorAutoConfiguration
+
