@@ -1,0 +1,24 @@
+spring.profiles: default
+#spring.profiles.include: local-int, embedded-aws
+---
+vop.framework:
+  aws:
+    s3:
+      enabled: true
+      buckets:
+        - id: firstId
+          name: firstName
+          endpoint: https://s3.us-gov-west-1.amazonaws.com/123123123/project-test-project-bucket
+          region: us-gov-west-1
+        - id: secondId
+          name: secondName
+          endpoint: https://s3.us-gov-west-1.amazonaws.com/456456456/project-test-project-bucket
+          region: us-gov-west-1
+        - id: thirdId
+          # Omitted to add misconfiguration
+          # name: thirdName
+          endpoint: https://s3.us-gov-west-1.amazonaws.com/789789789/project-test-project-bucket
+          region: us-gov-west-1
+---
+cloud.aws.stack.auto: false
+cloud.aws.region.static: us-gov-west-1

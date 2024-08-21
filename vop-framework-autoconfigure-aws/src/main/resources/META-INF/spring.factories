@@ -1,0 +1,6 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.wynd.vop.framework.localstack.autoconfigure.LocalstackAutoConfiguration,\
+com.wynd.vop.framework.aws.autoconfigure.BipSqsAutoConfiguration,\
+com.wynd.vop.framework.aws.autoconfigure.BipSnsAutoConfiguration,\
+com.wynd.vop.framework.aws.autoconfigure.BipS3AutoConfiguration

@@ -1,0 +1,162 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.wynd.vop.framework</groupId>
+		<artifactId>vop-framework-parentpom</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../vop-framework-parentpom</relativePath>
+	</parent>
+
+	<artifactId>vop-framework-autoconfigure-aws</artifactId>
+	<name>${project.artifactId}</name>
+	<description>AutoConfiguration for VOP Application Framework AWS - Spring Boot and Cloud Enabled</description>
+
+	<properties>
+		<localstack-utils.version>0.2.0</localstack-utils.version>
+		<amazon-sqs-java-messaging-lib.version>1.0.8</amazon-sqs-java-messaging-lib.version>
+		<javax-jms-api.version>2.0.1</javax-jms-api.version>
+		<json-sanitizer.version>1.2.2</json-sanitizer.version>
+		<awssdk-sns.version>2.10.56</awssdk-sns.version>
+		<aws-java-sdk.version>1.12.129</aws-java-sdk.version>
+
+		<sonar.coverage.exclusions>
+			**/LocalstackAutoConfiguration.java,
+			**/LocalstackAutoConfigurationImpl.java,
+			**/LocalstackInitializerConfiguration.java,
+			**/AbstractSnsConfiguration.java,
+			**/AbstractS3Configuration.java;
+		</sonar.coverage.exclusions>
+	</properties>
+	
+	<dependencies>
+		<!-- Bip Framework Libraries -->
+		<dependency>
+			<groupId>com.wynd.vop.framework</groupId>
+			<artifactId>vop-framework-libraries</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- Spring Framework AspectJ -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+		</dependency>
+		<!-- Localstack Support -->
+		<dependency>
+			<groupId>cloud.localstack</groupId>
+			<artifactId>localstack-utils</artifactId>
+			<version>${localstack-utils.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>joda-time</groupId>
+					<artifactId>joda-time</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- Spring Cloud AWS -->
+		<dependency>
+			<groupId>io.awspring.cloud</groupId>
+			<artifactId>spring-cloud-aws-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.awspring.cloud</groupId>
+			<artifactId>spring-cloud-aws-core</artifactId>
+		</dependency>
+		<!-- Spring Framework JMS -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+		</dependency>
+		<!-- Amazon SQS Java Extended Client Lib -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>amazon-sqs-java-messaging-lib</artifactId>
+			<version>${amazon-sqs-java-messaging-lib.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-jms_1.1_spec</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>javax.jms</groupId>
+			<artifactId>javax.jms-api</artifactId>
+			<version>${javax-jms-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mikesamuel</groupId>
+			<artifactId>json-sanitizer</artifactId>
+			<version>${json-sanitizer.version}</version>
+		</dependency>
+		<!-- Amazon SNS Lib Dependencies  -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-sns</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>software.amazon.awssdk</groupId>
+			<artifactId>sns</artifactId>
+			<version>${awssdk-sns.version}</version>
+		</dependency>
+		<!-- Amazon Cloud SDK -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>${aws-java-sdk.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.amazonaws</groupId>
+					<artifactId>aws-java-sdk-elasticache</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- Spring Test Dependencies -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<inherited>false</inherited>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
