@@ -1,0 +1,21 @@
+site_name: "Framework Docs"
+
+nav:
+  - Home: "index.md"
+  - Release Notes: "https://github.com/department-of-veterans-affairs/vop-framework/releases"
+  - FAQ: "FAQ.md"
+  - API-Catalog: "api-catalog.md"
+  - Current Git Strategy: "current-git-strategy.md"
+  - Deprecation Strategy: "deprecation-strategy.md"
+  - Framework Release SOP: "framework-release-sop.md"
+  - Gitflow Workflow: "gitflow_workflow.md"
+  - JK11 Upgrade Instruction: "jdk11_upgrade_instructions.md"
+  - Pull Request Template: "pull_request_template.md"
+  - Pull Request Template Example: "pull_request_template_example.md"
+  - Software Studio: "software_studio.md"
+  - Spring Boot Upgrade Instructions: "spring_boot_upgrade_instructions.md"
+  - Versioning Strategy: "versioning-strategy.md"
+
+plugins:
+  - techdocs-core
+

@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: vop-framework
+  description: VOP Framework
+  tags:
+    - java
+    - data
+    - kafka
+#   links:
+#    - url: url
+#      title: title
+#      icon: user
+  annotations:
+    github.com/project-slug: department-of-veterans-affairs/vop-framework
+    backstage.io/techdocs-ref: dir:.
+    bih/techdocs-builder: local
+spec:
+  type: service
+  lifecycle: experimental
+  owner: vop
+  system: vop
+  definition:
+    $text: https://github.com/department-of-veterans-affairs/vop-reference-person/blob/development/vop-reference-person/src/main/resources/openapi/openapi.yml
